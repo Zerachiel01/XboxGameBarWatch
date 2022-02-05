@@ -14,11 +14,11 @@ namespace XboxGameBarWatch
 
             textBlockTime.Foreground = new SolidColorBrush(Color.FromArgb(255, 238, 244, 248));
 
-            SetUpTimer();
+            SetUpWatchRefresh();
             ShowCurrentTime();
         }
 
-        private void SetUpTimer()
+        private void SetUpWatchRefresh()
         {
             var timer = new DispatcherTimer
             {
