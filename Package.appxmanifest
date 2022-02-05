@@ -9,14 +9,14 @@
 
   <Identity
     Name="c50452dc-f4f8-499b-b819-7bc8f7e75645"
-    Publisher="CN=andre"
+    Publisher="CN=AK"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="c50452dc-f4f8-499b-b819-7bc8f7e75645" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>XboxGameBarWatch</DisplayName>
-    <PublisherDisplayName>andre</PublisherDisplayName>
+    <PublisherDisplayName>AK</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -59,8 +59,8 @@
                                 <Size>
                                     <Height>50</Height>
                                     <Width>150</Width>
-                                    <MinHeight>0</MinHeight>
-                                    <MinWidth>0</MinWidth>
+                                    <MinHeight>25</MinHeight>
+                                    <MinWidth>50</MinWidth>
                                     <MaxHeight>500</MaxHeight>
                                     <MaxWidth>500</MaxWidth>
                                 </Size>
