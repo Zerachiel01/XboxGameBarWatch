@@ -8,17 +8,10 @@ using Windows.UI.Xaml.Navigation;
 
 namespace XboxGameBarWatch
 {
-    /// <summary>
-    /// Stellt das anwendungsspezifische Verhalten bereit, um die Standardanwendungsklasse zu ergänzen.
-    /// </summary>
     public sealed partial class App : Application
     {
         private XboxGameBarWidget widget = null;
 
-        /// <summary>
-        /// Initializes the singleton application object.  This is the first line of authored code
-        /// executed, and as such is the logical equivalent of main() or WinMain().
-        /// </summary>
         public App()
         {
             InitializeComponent();
