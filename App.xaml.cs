@@ -1,19 +1,9 @@
-﻿using Microsoft.Gaming.XboxGameBar;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
+﻿using System;
+using Microsoft.Gaming.XboxGameBar;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 namespace XboxGameBarWatch
@@ -21,7 +11,7 @@ namespace XboxGameBarWatch
     /// <summary>
     /// Stellt das anwendungsspezifische Verhalten bereit, um die Standardanwendungsklasse zu ergänzen.
     /// </summary>
-    sealed partial class App : Application
+    public sealed partial class App : Application
     {
         private XboxGameBarWidget widget = null;
 
@@ -31,8 +21,8 @@ namespace XboxGameBarWatch
         /// </summary>
         public App()
         {
-            this.InitializeComponent();
-            this.Suspending += OnSuspending;
+            InitializeComponent();
+            Suspending += OnSuspending;
         }
 
         protected override void OnActivated(IActivatedEventArgs args)
@@ -41,7 +31,7 @@ namespace XboxGameBarWatch
             if (args.Kind == ActivationKind.Protocol)
             {
                 var protocolArgs = args as IProtocolActivatedEventArgs;
-                string scheme = protocolArgs.Uri.Scheme;
+                var scheme = protocolArgs.Uri.Scheme;
                 if (scheme.Equals("ms-gamebarwidget"))
                 {
                     widgetArgs = args as XboxGameBarWidgetActivatedEventArgs;
@@ -109,7 +99,7 @@ namespace XboxGameBarWatch
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-            Frame rootFrame = Window.Current.Content as Frame;
+            var rootFrame = Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
@@ -148,10 +138,7 @@ namespace XboxGameBarWatch
         /// </summary>
         /// <param name="sender">The Frame which failed navigation</param>
         /// <param name="e">Details about the navigation failure</param>
-        void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
-        {
-            throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
-        }
+        private void OnNavigationFailed(object sender, NavigationFailedEventArgs e) => throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
 
         /// <summary>
         /// Invoked when application execution is being suspended.  Normally we
